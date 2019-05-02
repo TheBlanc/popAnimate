@@ -12,128 +12,117 @@ body {
   overflow: hidden;
 }
 
+.controls {
+  padding: 0 10px;
+  display: inline-block;
+  /* border: dashed #cccccc 2px; */
+}
+
 
 .place {
   cursor: default;
-  font: 40px sans-serif;
+  font: 67px sans-serif;
   color: rgb(215, 51, 130);
-  top: 47px;
-  left: 6px;
 }
 
 .click {
   cursor: default;
   font: 14px monospace;
   color: #fff;
-  top: 70px;
-  left: 10px;
-
-}
-
-.tog {
-  position: absolute;
-  text-align: center;
-  display: inline-block;
+  margin: -38px 0 0 0;
 }
 
 
 .shape {
 position: absolute;
-text-align: center;
-display: inline-block;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 60px;
 border-radius: 50%;
 height: 100px;
 width: 100px;
-
+cursor: default;
 }
 
-
-.one {
-  background-color: rgb(218, 88, 88);
-  z-index: 1;
-
-
-
-}
-.two {
-  background-color: rgb(146, 108, 207);
-  z-index: 2;
-
-
-}
-.three {
-  background-color: rgb(233, 188, 71);
-  z-index: 3;
-
-
-}
-.four {
-  background-color: rgb(250, 247, 1);
-  z-index: 4;
-
-
-}
-.five {
-  background-color: rgb(167, 115, 252);
-  z-index: 5;
-
-
-}
-.six {
-  background-color: rgb(189, 210, 114);
-  z-index: 6;
-
-
-}
-.seven {
-  background-color: rgb(110, 175, 181);
-  z-index: 7;
-
-
-}
-.eight {
-  background-color: rgb(110, 210, 228);
-  z-index: 8;
-
-
-}
-.nine {
-  background-color: rgb(1, 122, 69);
-  z-index: 9;
-
-
-}
-.ten {
-  background-color: rgb(208, 79, 31);
-  z-index: 10;
-
-
-}
-.eleven {
-  background-color: rgb(41, 169, 186);
-  z-index: 11;
-
-
-}
-.twelve {
-  background-color: rgb(149, 28, 180);
-  z-index: 11;
-
-
-}
-.thirteen {
-  background-color: rgb(240, 161, 168);
-  z-index: 11;
-
-
-}
-.fourteen {
-  background-color: rgb(255, 232, 133);
-  z-index: 11;
-  
-
+.emoji {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 60px;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  cursor: default;
+  background-color: clear;
 }
 
-.off {
-  display: none;
+/* ------------ switch ------------- */
+.switchContainer {
+  padding: 0px 15px 10px 15px;
+  display: inline-block;
+}
+
+.switch {
+  opacity: 0;
+}
+
+.switch > div {
+  width: 80px;
+  height: 40px;
+  background: #9A9A9A;
+  z-index: 0;
+  cursor: pointer;
+  position: relative;
+  border-radius: 50px;
+  line-height: 40px;
+  text-align: right;
+  padding: 0 10px;
+  color: rgba(0,0,0,.5);
+  transition: all 250ms;
+  box-shadow: inset 0 3px 15px -3px
+}
+
+.switch > input:checked + div {
+  background: #d73382;
+  text-align: left;
+}
+
+.switch > div:before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: -2px;
+  height: 44px;
+  width: 44px;
+  background: linear-gradient(#f9f9f9 30%,#CDCDCD);
+  border-radius: 50%;
+  transition: all 200ms;
+  box-shadow: 0 15px 15px -3px rgba(0,0,0,.25), inset 0 -2px 2px -3px,  0 3px 0 0px #f9f9f9;
+}
+
+.switch > div:after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  left: 11px;
+  top: 11px;
+  height: 22px;
+  width: 22px;
+  background: linear-gradient(#DCDCDC,#E3E3E3);
+  border-radius: 50%;
+  transition: all 200ms;
+}
+
+.switch > input:checked + div:after {
+  left: 52px;
+}
+
+.switch > input:checked + div:before {
+  content: '';
+  position: absolute;
+  left: 40px;
+  border-radius: 50%;
 }
