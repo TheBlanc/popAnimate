@@ -15,29 +15,21 @@
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
   </head>
   <body>
-    <div class="place tog" id="star">*</div>
-    <div class="click tog" id="click">(click anywhere)</div>
-
+    <section class="controls">
+      <div class="place" id="star">*</div>
+      <p class="click" id="click">(click anywhere)</p>
+      <div class="switchContainer">
+        <label class="switch">
+          <input type="checkbox" class="checkbox"/>
+          <div class=""></div>
+        </label>
+      </div>
+    </section>
     <div class="container">
-      <div class="shape animated pulse infinite one off" id="one"></div>
-      <div class="shape animated pulse infinite two off" id="two"></div>
-      <div class="shape animated pulse infinite three off" id="three"></div>
-      <div class="shape animated pulse infinite four off" id="four"></div>
-      <div class="shape animated pulse infinite five off" id="five"></div>
-      <div class="shape animated pulse infinite six off" id="six"></div>
-      <div class="shape animated pulse infinite seven off" id="seven"></div>
-      <div class="shape animated pulse infinite eight off" id="eight"></div>
-      <div class="shape animated pulse infinite nine off" id="nine"></div>
-      <div class="shape animated pulse infinite ten off" id="ten"></div>
-      <div class="shape animated pulse infinite eleven off" id="eleven"></div>
-      <div class="shape animated pulse infinite twelve off" id="twelve"></div>
-      <div class="shape animated pulse infinite thirteen off" id="thirteen"></div>
-      <div class="shape animated pulse infinite fourteen off" id="fourteen"></div>
+      <!-- append divs here -->
     </div>
 
-    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> -->
-    <!-- <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script> -->
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>
