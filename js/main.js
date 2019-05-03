@@ -5,28 +5,31 @@ var emojis = ['💩', '✌️', '👻', '⚡️', '🌻', '🤙', '👽', '🍕'
 
 function addBubble() {
 
-  $(".container").append('<div class="shape animated pulse infinite"></div><div class="emoji animated pulse infinite"></div>');
-  var circle = $(".shape").last();
-  var emojiObject = $(".emoji").last();
+  var checkBoxState = $('input[type=checkbox]').prop('checked');
+  if (checkBoxState) {
 
-  var randomEmojiNum = Math.random() * (emojis.length);
-  var randomColorNum = Math.random() * (colors.length);
+    $(".container").append('<div class="shape animated pulse infinite"></div>');
+    var circle = $(".shape").last();
+    var randomColorNum = Math.random() * (colors.length);
+    randomColorNum = Math.floor(randomColorNum);
+    console.log("random Color Num = " + randomColorNum);
+    circle[0].style.left = event.x - 50 + "px";
+    circle[0].style.top = event.y - 50 + "px";
+    circle[0].style.backgroundColor = colors[randomColorNum];
 
-  randomEmojiNum = Math.floor(randomEmojiNum);
-  randomColorNum = Math.floor(randomColorNum);
 
-  console.log("random Emoji Num = " + randomEmojiNum);
-  console.log("random Color Num = " + randomColorNum);
+  } else {
 
+    $(".container").append('<div class="emoji animated pulse infinite"></div>');
+    var emojiObject = $(".emoji").last();
+    var randomEmojiNum = Math.random() * (emojis.length);
+    randomEmojiNum = Math.floor(randomEmojiNum);
+    console.log("random Emoji Num = " + randomEmojiNum);
+    emojiObject[0].style.left = event.x - 50 + "px";
+    emojiObject[0].style.top = event.y - 50 + "px";
+    emojiObject[0].innerHTML = emojis[randomEmojiNum];
 
-  circle[0].style.left = event.x - 50 + "px";
-  circle[0].style.top = event.y - 50 + "px";
-  circle[0].style.backgroundColor = colors[randomColorNum];
-
-  emojiObject[0].style.left = event.x - 50 + "px";
-  emojiObject[0].style.top = event.y - 50 + "px";
-  emojiObject[0].innerHTML = emojis[randomEmojiNum];
-
+  }
 }
 
 // 'stopPropagation()' stops the click event from working on top of the switch. This way the pop-up objects do not cover the switch and interfere with the functionality.
@@ -35,7 +38,16 @@ $('.controls').click(function(e) {
 });
 
 $('.switchContainer').click(function(e) {
-  $('.shape').css({"display: none"});
+  var checkBoxState = $('input[type=checkbox]').prop('checked');
+  if (checkBoxState) {
+    $('#circle-label').toggle('clip');
+
+
+//
+  } else {
+    console.log(checkBoxState);
+    $('#emoji-label').toggle('clip');
+  }
 });
 
 addEventListener('click', addBubble);
