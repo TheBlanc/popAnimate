@@ -62,9 +62,7 @@ cursor: default;
 .switch-label {
   font-family: monospace;
   color: #fff;
-  text-align: center;
-  padding-right: 27px;
-}
+  padding-left: 39px;}
 
 #circle-label {
   display: none;
@@ -136,4 +134,71 @@ cursor: default;
   position: absolute;
   left: 40px;
   border-radius: 50%;
+}
+
+/* ---------- Clear Button ----------- */
+/* @import 'https://fonts.googleapis.com/css?family=Rubik+One'; */
+
+/* body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background: #e53935;
+  background: linear-gradient(to left, #e53935 , #e35d5b);
+} */
+
+/* %test {
+  position: absolute;
+	content: '';
+	transition: all .5s;
+} */
+
+.button {
+	display: inline-block;
+  padding: 8px 10px;
+  margin: 10px 0 0 18px;
+  color: white;
+	vertical-align: middle;
+	font-family: sans-serif;
+  font-weight: bolder;
+	text-decoration: none;
+	font-size: 15px;
+	background-color: rgb(205, 38, 38);
+
+	/* &::before {
+    @extend %test;
+		bottom: -15px;
+		height: 15px;
+		width: 100%;
+		left: 8px;
+		transform: skewX(45deg);
+		background-color: darken(#3498db, 20%);
+	}
+
+	&::after {
+		@extend %test;
+		right: -15px;
+		height: 100%;
+		width: 15px;
+		bottom: -8px;
+		transform: skewY(45deg);
+		background-color: darken(#3498db, 30%);
+	} */
+
+	/* &:active {
+		margin-left: 10px;
+		margin-top: 10px;
+		&::before {
+			bottom: -5px;
+			height: 5px;
+			left: 3px;
+		}
+
+    &::after {
+			right: -5px;
+			width: 5px;
+			bottom: -3px;
+		}
+	} */
 }

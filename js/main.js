@@ -1,7 +1,7 @@
-var colors = ["rgb(218, 88, 88)", "rgb(146, 108, 207)", "rgb(233, 188, 71)", "rgb(250, 247, 1)", "rgb(167, 115, 252)", "rgb(189, 210, 114)", "rgb(110, 175, 181)", "rgb(110, 210, 228)", "rgb(1, 122, 69)", "rgb(208, 79, 31)", "rgb(41, 169, 186)"
-, "rgb(149, 28, 180)", "rgb(240, 161, 168)", "rgb(255, 232, 133)", "rgb(255, 199, 56)", "rgb(133, 67, 187)", "rgb(155, 106, 227)", "rgb(68, 237, 155)", "rgb(171, 116, 52)", "rgb(227, 76, 49)"];
+var colors = ["rgb(222, 53, 53)", "rgb(152, 101, 233)", "rgb(249, 193, 47)", "rgb(250, 247, 1)", "rgb(167, 113, 255)", "rgb(215, 252, 80)", "rgb(108, 213, 223)", "rgb(0, 192, 227)", "rgb(0, 126, 69)", "rgb(242, 228, 39)", "rgb(81, 231, 177)"
+, "rgb(86, 28, 180)", "rgb(240, 161, 168)", "rgb(69, 214, 218)", "rgb(255, 199, 56)", "rgb(133, 67, 187)", "rgb(155, 106, 227)", "rgb(68, 237, 155)", "rgb(242, 146, 34)", "rgb(227, 76, 49)"];
 
-var emojis = ['💩', '✌️', '👻', '⚡️', '🌻', '🤙', '👽', '🍕', '🏝', '☀️', '🥑', '🔮', '🌎'];
+var emojis = ['💩', '✌️', '👻', '⚡️', '🌻', '🤙', '👽', '🍕', '🏝', '☀️', '🥑', '🔮', '🌎', '🌙', '🍝', '🍿', '🥟', '🍦', '❤️', '👁', '🙈', '🙉', '🙊', '🌵', '🍳', '🥞', '🍟'];
 
 function addBubble() {
 
@@ -9,7 +9,7 @@ function addBubble() {
 
   if (checkBoxState) {
 
-    $(".container").append('<div class="shape animated pulse infinite"></div>');
+    $(".container").append('<div class="thing shape animated pulse infinite"></div>');
     var circle = $(".shape").last();
     var randomColorNum = Math.random() * (colors.length);
     randomColorNum = Math.floor(randomColorNum);
@@ -17,10 +17,10 @@ function addBubble() {
     circle[0].style.left = event.x - 50 + "px";
     circle[0].style.top = event.y - 50 + "px";
     circle[0].style.backgroundColor = colors[randomColorNum];
-    
+
   } else {
 
-    $(".container").append('<div class="emoji animated pulse infinite"></div>');
+    $(".container").append('<div class="thing emoji animated pulse infinite"></div>');
     var emojiObject = $(".emoji").last();
     var randomEmojiNum = Math.random() * (emojis.length);
     randomEmojiNum = Math.floor(randomEmojiNum);
@@ -48,6 +48,10 @@ $('.switchContainer').click(function(e) {
     console.log(checkBoxState);
     $('#emoji-label').toggle('clip');
   }
+});
+
+$('#clearButton').click(function(e) {
+  $('.thing').remove();
 });
 
 addEventListener('click', addBubble);
